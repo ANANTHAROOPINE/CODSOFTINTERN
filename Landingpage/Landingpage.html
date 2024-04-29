@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<head>
+    <title>Landing Page</title>
+    <style>
+        body {
+            background-color: lightpink;
+        }
+        header {
+            text-align: center;
+        }
+        .navigation {
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 14px;
+        }
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navigation li {
+            display: inline;
+            margin-right: 50px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #333;
+            position: relative;
+        }
+        .navigation a:hover {
+            color: #666;
+        }
+        .navigation a:hover::after {
+            content: ''; 
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%; 
+            height: 2px; 
+            background-color: crimson; 
+        }
+        h1 {
+            text-align: center;
+        }
+        .frontpage-container {
+            position: relative; 
+            margin-top: 30px;
+            text-align: center;
+            width: 100%; 
+        }
+        .frontpage {
+            display: block; 
+            margin: 0 auto; 
+            width: 1500px;
+            height: 800px; 
+            position: relative; 
+        }
+        .frontpage-container::before {
+            content: ""; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 5, 5, 0.34); 
+            z-index: 1;
+        }
+        .frontpage-text {
+            position:absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            font-size: 24px; 
+            font-weight: bold; 
+            z-index: 2; 
+        }
+        .front-content {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center; 
+        }
+        .frontcontent-text {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .photos-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-top: 20px; 
+        }
+        .column {
+            display: flex; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+}
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%; 
+            margin: 0 60px; 
+        }
+        figcaption {
+            margin-top: 5px;
+            text-align: center; 
+            font-size: 14px; 
+        }
+        .about-box {
+            background-color: lightpink;
+            border: 2px solid crimson;
+            border-radius: 10px;
+            padding: 20px;
+            width: 600px;
+            line-height: 2;
+            margin: 50px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .contact {
+            text-align: center;
+        }
+        .pic-con {
+            display: flex;
+            justify-content: center;
+            margin-top: 1px;
+        }
+        .small-pic {
+            width: 40px; 
+            height: 40px;
+            border-radius: 70%;
+            margin: 0 10px;
+        }
+        .buttons-container {
+            display: flex; 
+            margin-top: 30px; 
+        }
+        .contact-box{
+            background-color: white; 
+            margin-left: 22px;
+            padding: 10px 20px; 
+            margin-right: 100px;
+            width: 150px;
+            height: 55px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+            color: white;
+            border-radius: 5px; 
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        .contact-box a {
+            text-decoration: none;
+            color: lightcoral;
+            font-weight: bold;
+        }
+        .contact-box a:hover {
+            color: crimson;
+        }
+        .resume-box {
+            background-color: white; 
+            padding: 10px 20px; 
+            margin-left: 40px; 
+            width: 150px;
+            height: 55px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+            color: white;
+            border-radius: 5px; 
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        .resume-box a {
+            text-decoration: none;
+            color: lightcoral;
+            font-weight: bold;
+        }
+        .resume-box a:hover {
+            color: crimson;
+        }
+        .imgs {
+            margin-right: 350px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: auto;
+            margin-top: 1010px;
+        }
+        .about {
+            position: relative;
+            margin-left: 190px;
+            margin-top: 50px;
+            max-width: 500px;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.5;
+            color: black;
+            z-index: 999;
+        } 
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="frontpage-container">
+        <img src="C:\Users\anant\Downloads\front p.jpeg" alt="Icecream" class="frontpage">
+        <div class="frontpage-text">
+            <P>Welcome to our Icecream shop</P>
+            <h1>SCOOP & CHILL</h1>
+            Life is like an ice cream, enjoy it before it melts
+            <div class="buttons-container">
+                <div class="contact-box">
+                    <a href="#contactme">Read More</a>
+                </div>
+                <div class="resume-box">
+                    <a href="#portfolio1">Order Now</a>
+                </div>
+                </div>
+        </div>
+    </div>
+    <img src="C:\Users\anant\Downloads\icecream.jpeg" alt="Icecream" class="imgs">
+    <div class="about">
+        <h1>ABOUT US</h1>
+        <p>Welcome to our <B>"SCOOP & CHILL"</B> ice cream paradise, where every scoop is a taste of happiness! At our shop, we pride ourselves on serving up the creamiest, most decadent flavors that will tantalize your taste buds and leave you craving more. From classic favorites like rich chocolate and velvety vanilla to adventurous creations like tangy raspberry sorbet and indulgent salted caramel, there's something to satisfy every craving. Come indulge in a scoop or two and treat yourself to a delightful experience that will leave you smiling from ear to ear!</p>
+    </div>
+    <div class="front-content">
+        <div class="frontcontent-text">VISIT OUR STORE</div>
+    </div>
+    <div class="photos-container">
+        <div class="column">
+        <figure>
+            <img src="C:\Users\anant\Downloads\Chocolate.jpeg" alt="Photo 1" class="photo">
+            <figcaption>CHOCOLATE</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\Vanilla.jpeg" alt="Photo 2" class="photo">
+            <figcaption>VANILLA</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\pista.jpeg" alt="Photo 3" class="photo">
+            <figcaption>PISTA</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\butterscotch.jpeg" alt="photo 4" class="photo">
+            <figcaption>BUTTERSCOTCH</figcaption>
+        </figure>
+    </div>
+    <div class="column">
+        <figure>
+            <img src="C:\Users\anant\Downloads\strawberry.jpeg" class="photo">
+            <figcaption>STRAWBERRY</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\redvelvet.jpeg" class="photo">
+            <figcaption>RED VELVET</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\mango.jpeg" class="photo">
+            <figcaption>MANGO</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\rasperry.jpeg" class="photo">
+            <figcaption>RASPERRY</figcaption>
+        </figure>
+    </div>
+    </div>
+    <div class="front-content">
+        <div class="frontcontent-text">OUR BESTSELLER</div>
+    </div>
+    <div class="photos-container">
+        <div class="column">
+        <figure>
+            <img src="C:\Users\anant\Downloads\belgium.jpeg" alt="Photo 1" class="photo">
+            <figcaption>BELGIUM CHOCOLATE</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\falooda.jpeg" alt="Photo 2" class="photo">
+            <figcaption>FALOODA</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\magnum.jpeg" alt="Photo 3" class="photo">
+            <figcaption>MAGNUM CHOCOLATE</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\casata.jpeg" alt="photo4" class="photo">
+            <figcaption>CASATA</figcaption>
+        </figure>
+    </div>
+    <div class="front-content">
+        <div class="frontcontent-text">EXPLORE MORE</div>
+    </div>
+    <div class="photos-container">
+        <div class="column">
+        <figure>
+            <img src="C:\Users\anant\Downloads\kulfi.jpeg" alt="Photo 1" class="photo">
+            <figcaption>KULFI</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\fruits and nuts.jpeg" alt="Photo 2" class="photo">
+            <figcaption>FRUITS AND NUTS</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\cookies and creams.jpeg" alt="Photo 3" class="photo">
+            <figcaption>COOKIES AND CREAMS</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\CONE.jpeg" class="photo">
+            <figcaption>CONE</figcaption>
+        </figure>
+    </div>
+        <div class="column">
+        <figure>
+            <img src="C:\Users\anant\Downloads\FAMILY PACK.jpeg" alt="Photo 1" class="photo">
+            <figcaption>FAMILY PACK</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\FRUITSTICKS.jpeg" alt="Photo 2" class="photo">
+            <figcaption>FRUITSTICKS</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\CUSTOMISED.jpeg" alt="Photo 3" class="photo">
+            <figcaption>CUSTOMISED SCOOPE</figcaption>
+        </figure>
+        <figure>
+            <img src="C:\Users\anant\Downloads\CUP.jpeg" class="photo">
+            <figcaption>CUP ICECREAM</figcaption>
+        </figure>
+    </div>
+    <div class="about-box">
+        <h2>REVIEW</h2>
+        <p>Absolutely love this place! The flavors are incredible, and the staff is always so friendly and welcoming. It's become our go-to spot for a sweet treat on a hot day.Hands down the best ice cream in town! The quality is top-notch, and they have such a wide variety of flavors to choose from. My favorite is their creamy chocolate fudge – it's like heaven in a cone!This place never disappoints! The ice cream is consistently delicious, and the portions are generous. Plus, the cozy atmosphere makes it the perfect spot to relax and enjoy a scoop with friends.I'm a regular here, and for good reason – the ice cream is simply divine. Whether I'm in the mood for something classic or feeling adventurous, they always have the perfect flavor to satisfy my cravings.I stumbled upon this gem of an ice cream shop, and I'm so glad I did! The flavors are creative and bold, and you can really taste the passion and care that goes into each batch. It's a must-visit for any ice cream lover!</p>
+    </div>
+    <div class="contact">
+        <h2><b>CONTACT</b></h2>
+        <p>SCOOP & CHILL</p>
+        <div class="pic-con">
+            <img src="C:\Users\anant\Downloads\Insta logo.jpeg" alt="Image 4" class="small-pic">
+            <img src="C:\Users\anant\Downloads\WP LOGO (2).jpeg" alt="Image 1" class="small-pic">
+            <img src="C:\Users\anant\Downloads\Facebook.jpeg" alt="Image 2" class="small-pic">
+            <img src="C:\Users\anant\Downloads\TWITTER.jpeg" alt="Image 3" class="small-pic">
+        </div>
+    </div>
+</body>
